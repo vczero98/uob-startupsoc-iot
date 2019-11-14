@@ -2,7 +2,9 @@ const express    = require('express');
 	  app        = express(),
 	  bodyParser = require('body-parser'),
 	  path       = require('path'),
-	  server     = require('http').createServer(app),
+	  http       = require('http')
+	  server     = http.createServer(app),
+	  io         = require('socket.io').listen(server),
 	  https      = require('https');
 
 const port          = process.env.PORT,
@@ -15,6 +17,9 @@ app.set('views', path.join(__dirname, '/views'));
 
 // Routes
 var apiRoutes = require("./routes/api");
+
+// Socket IO
+const pi = require("./io/pi")(io);
 
 app.use('/api', apiRoutes);
 
