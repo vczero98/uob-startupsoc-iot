@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Startup Society IoT Workshop</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"> 
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Startup Society IoT Workshop</h1>
+            <div id="ss-logo">
+                <img src="https://www.startupsoc.com/img/logo.png" id="rocket">
+                <button type="button" class="btn btn-danger">Go!</button>
+                <div class="led green" id="led-0" data-id="0"></div>
+                <div class="led yellow" id="led-1" data-id="1"></div>
+                <div class="led green large" id="led-2" data-id="2"></div>
+                <div class="led blue large" id="led-3" data-id="3"></div>
+                <div class="led green large" id="led-4" data-id="4"></div>
+                <div class="led yellow" id="led-5" data-id="5"></div>
+                <img src="/images/flame.gif" id="flame" class="on">
+                <div class="led red" id="led-6" data-id="6"></div>
+            </div>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>

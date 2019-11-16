@@ -1,0 +1,133 @@
+body {
+    font-family: Roboto;
+    background: #36D1DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+}
+
+.container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+#ss-logo {
+    width: 690px;
+    height: 690px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+#rocket {
+    width: 100%;
+}
+
+h1 {
+    font-size: 4pc;
+}
+
+.btn {
+    font-size: 4pc;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.led {
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
+    border: 1px black solid;
+    position: relative;
+}
+
+.led.large {
+    height: 65px;
+    width: 65px;
+}
+
+.led.green {
+    background-color: green;
+}
+
+.led.green.on {
+    box-shadow: 0 0 30px lightgreen, 0 0 50px lightgreen;
+    background-color: lightgreen;
+}
+
+.led.yellow {
+    background-color: darkorange;
+}
+
+.led.yellow.on {
+    box-shadow: 0 0 30px yellow, 0 0 50px yellow;
+    background-color: yellow;
+}
+
+.led.blue {
+    background-color: blue;
+}
+
+.led.blue.on {
+    box-shadow: 0 0 30px #007bff, 0 0 50px #007bff;
+    background-color: #007bff;
+}
+
+.led.red {
+    background-color: #c11818;
+}
+
+.led.red.on {
+    box-shadow: 0 0 30px #FF0000, 0 0 50px #FF0000;
+    background-color: red;
+}
+
+
+#led-0 {
+    left: 607px;
+    top: -856px;
+}
+
+#led-1 {
+    left: 117px;
+    top: -699px;
+}
+
+#led-2 {
+    left: 191px;
+    top: -695px;
+}
+
+#led-3 {
+    left: 248px;
+    top: -701px;
+}
+
+#led-4 {
+    left: 305px;
+    top: -707px;
+}
+
+#led-5 {
+    left: 364px;
+    top: -686px;
+}
+
+#led-6 {
+    left: 155px;
+    top: -1261px;
+}
+
+#flame {
+    width: 250px;
+    transform: rotate(225deg);
+    position: relative;
+    top: -925px;
+    left: -230px;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+}
+
+#flame.on {
+    opacity: 1;
+}

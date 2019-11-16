@@ -24,7 +24,7 @@ const pi = require("./io/pi")(io);
 app.use('/api', apiRoutes);
 
 app.get("/", (req, res) => {
-	res.send('main page here');
+	res.render('index');
 });
 
 server.listen(port, serverAddress, () => {
