@@ -85,32 +85,32 @@ h1 {
 
 #led-0 {
     left: 607px;
-    top: -856px;
+    top: -1319.3px;
 }
 
 #led-1 {
     left: 117px;
-    top: -699px;
+    top: -1162.3px;
 }
 
 #led-2 {
     left: 191px;
-    top: -695px;
+    top: -1158.3px;
 }
 
 #led-3 {
     left: 248px;
-    top: -701px;
+    top: -1164.3px;
 }
 
 #led-4 {
     left: 305px;
-    top: -707px;
+    top: -1170.3px;
 }
 
 #led-5 {
     left: 364px;
-    top: -686px;
+    top: -1149.3px;
 }
 
 #led-6 {
@@ -120,12 +120,12 @@ h1 {
 
 #flame {
     width: 250px;
-    transform: rotate(225deg);
+    transform: rotate(227deg);
     position: relative;
-    top: -925px;
+    top: -355px;
     left: -230px;
     opacity: 0;
-    transition: opacity .25s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 #flame.on {

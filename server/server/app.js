@@ -18,8 +18,26 @@ app.set('views', path.join(__dirname, '/views'));
 // Routes
 var apiRoutes = require("./routes/api");
 
+const deviceState = {
+	lights: [true, true, true, true, true, true, true],
+	flame: false,
+	handleLightsUpdated: () => {},
+	handleFlameUpdated: () => {}
+}
+
 // Socket IO
-const pi = require("./io/pi")(io);
+const client = require("./io/client")(io, deviceState);
+const pi = require("./io/pi")(io, deviceState);
+
+// Toggle flame
+
+function toggleFlame() {
+	deviceState.flame = !deviceState.flame;
+	deviceState.handleFlameUpdated();
+	console.log(`flame is ${deviceState.flame}...`);
+	setTimeout(toggleFlame, 5000);
+}
+toggleFlame();
 
 app.use('/api', apiRoutes);
 

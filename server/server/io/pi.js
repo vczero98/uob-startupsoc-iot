@@ -1,7 +1,7 @@
 module.exports = io => {
-    console.log("Started listening for connections...");
+    const pi = io.of("/pi")
 
-    io.on('connection', function(socket){
+    pi.on('connection', function(socket){
         console.log('Pi connected');
         socket.on('disconnect', function(){
             console.log('Pi disconnected');
