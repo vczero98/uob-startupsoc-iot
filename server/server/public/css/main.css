@@ -131,3 +131,8 @@ h1 {
 #flame.on {
     opacity: 1;
 }
+
+#submit {
+    position: relative;
+    top: -450px;
+}

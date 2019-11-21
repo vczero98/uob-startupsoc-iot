@@ -1,19 +1,25 @@
-module.exports = io => {
+module.exports = (io, deviceState) => {
     const pi = io.of("/pi")
 
-    pi.on('connection', function(socket){
+    pi.on('connection', socket => {
         console.log('Pi connected');
-        socket.on('disconnect', function(){
+        socket.on('disconnect', () => {
             console.log('Pi disconnected');
         });
-    });
 
-    // io.on('connection', function (socket) {
-    //     socket.emit('news', { hello: 'world' });
-    //     socket.on('my other event', function (data) {
-    //       console.log(data);
-    //     });
-    // });
+        socket.on('flame_state', data => {
+            if (data.secret && (data.secret == process.env.PI_SECRET)) {
+                console.log('received ' + data.state);
+                deviceState.flame = data.state;
+                deviceState.handleFlameUpdated()
+            }
+        });
+
+        deviceState.handleLightsUpdated = () => {
+            pi.emit('led_state', deviceState.lights);
+            console.log("State emitted to Pi");
+        }
+    });
 
     return io;
 }

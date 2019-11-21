@@ -1,24 +1,23 @@
 module.exports = (io, deviceState) => {
 	const client = io.of("/client");
 
-    client.on('connection', function(socket){
+    client.on('connection', socket => {
         console.log('Client connected');
-        socket.on('disconnect', function(){
+        socket.on('disconnect', () => {
             console.log('Client disconnected');
-		});
+        });
+        
+        socket.on('led-state', state => {
+            console.log("Received " + JSON.stringify(state));
+            deviceState.lights = state;
+            deviceState.handleLightsUpdated();
+        });
 		
 		deviceState.handleFlameUpdated = () => {
-			console.log("emmitting " + deviceState.flame);
+			console.log("emitting " + deviceState.flame);
 			client.emit(deviceState.flame ? 'flame-on' : 'flame-off');
 		}
     });
-
-    // io.on('connection', function (socket) {
-    //     socket.emit('news', { hello: 'world' });
-    //     socket.on('my other event', function (data) {
-    //       console.log(data);
-    //     });
-    // });
 
     return io;
 }

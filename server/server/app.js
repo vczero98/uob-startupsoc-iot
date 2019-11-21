@@ -29,15 +29,14 @@ const deviceState = {
 const client = require("./io/client")(io, deviceState);
 const pi = require("./io/pi")(io, deviceState);
 
-// Toggle flame
-
-function toggleFlame() {
-	deviceState.flame = !deviceState.flame;
-	deviceState.handleFlameUpdated();
-	console.log(`flame is ${deviceState.flame}...`);
-	setTimeout(toggleFlame, 5000);
-}
-toggleFlame();
+// // Toggle flame
+// function toggleFlame() {
+// 	deviceState.flame = !deviceState.flame;
+// 	deviceState.handleFlameUpdated();
+// 	console.log(`flame is ${deviceState.flame}...`);
+// 	setTimeout(toggleFlame, 5000);
+// }
+// toggleFlame();
 
 app.use('/api', apiRoutes);
 
