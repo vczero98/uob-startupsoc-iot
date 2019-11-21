@@ -15,11 +15,10 @@ class UltraSonic(threading.Thread):
         self._isDetectingHand = False
         self._handDetectedCallback = lambda : None
         self._handRemovedCallback = lambda : None
+        GPIO.setmode(GPIO.BCM)
 
     def run(self):
         self._mRun = True
-
-        GPIO.setmode(GPIO.BCM)
 
         TRIG = 21
         ECHO = 20
@@ -50,7 +49,8 @@ class UltraSonic(threading.Thread):
 
             distance = round(distance, 2) # Distance in cm
 
-            if distance > 15:
+            # print(distance)
+            if distance > 7:
                 if self._isDetectingHand:
                     self._isDetectingHand = False
                     print("Hand removed")
